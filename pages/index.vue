@@ -1,14 +1,12 @@
-<script setup lang="ts">
-const isNameSubmitted = useSubmitted();
+<script lang="ts" setup>
+
 </script>
 
 <template>
-  <section v-if="!isNameSubmitted" class="fade-in flex flex-col items-center justify-center gap-5 xl:gap-10">
-    <LazyHomeTitle />
-    <LazyHomeForm />
-  </section>
-  <section v-else class="fade-in flex flex-col items-center justify-center">
-    <LazyPoemMenu />
-    <LazyPoemText />
-  </section>
+    <main class="w-full min-h-screen bg-[#F2F2F2] text-[#333333] font-['Open_Sans'] flex items-center justify-center">
+        <section class="w-fit flex flex-col gap-4 items-center">
+            <HomeTitle />
+            <LazyHomeForm />
+        </section>
+    </main>
 </template>

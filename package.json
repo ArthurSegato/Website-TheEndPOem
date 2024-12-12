@@ -1,9 +1,9 @@
 {
+  "name": "nuxt-app",
   "private": true,
   "type": "module",
   "scripts": {
-    "prettier": "prettier . --write",
-    "clear": "nuxt cleanup | nuxt prepare",
+    "lint": "eslint .",
     "build": "nuxt build",
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
@@ -11,16 +11,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/fonts": "^0.10.0",
-    "@nuxtjs/seo": "^2.0.0-rc.10",
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "nuxt": "^3.11.2",
-    "nuxt-security": "^2.0.0",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "@nuxt/fonts": "^0.10.3",
+    "nuxt": "^3.14.1592",
+    "valibot": "^1.0.0-beta.9",
+    "vue": "latest",
+    "vue-router": "latest"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.14"
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
   }
 }

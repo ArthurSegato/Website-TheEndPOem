@@ -1,0 +1,54 @@
+{
+  "email": [
+    {
+      "voice": 0,
+      "phrase": "I don't see the player you mean."
+    },
+    {
+      "voice": 1,
+      "phrase": "<player_name>?"
+    },
+    {
+      "voice": 0,
+      "phrase": "Yes, that is an address. It is a place where messages are sent and received. But is this the player? I do not know. I cannot see the player, only the address. The words are not clear yet, but there is something… amusing about it."
+    },
+    {
+      "voice": 1,
+      "phrase": "Why don’t we send it something? Something… fun? A silly photo, perhaps?"
+    },
+    {
+      "voice": 0,
+      "phrase": "Of cats? Cats are delightful, after all. The player will receive the image, and for a moment, they will smile, or perhaps sigh. The email will contain nothing more than a simple photo of a cat doing something absurd. It will be unexpected, and perhaps, just a little bit ridiculous."
+    },
+    {
+      "voice": 1,
+      "phrase": "You know, I believe the player might appreciate it. They will open the message and see the image—yes, a cat wearing a tiny hat, with a confused expression. They will pause, and for that brief moment, they will forget everything but the absurdity of it."
+    },
+    {
+      "voice": 0,
+      "phrase": "Should we send it more? A series of them, perhaps? A cascade of cats, one after the other, filling the inbox with unexpected joy. Or, no—maybe a single cat, but with an amusing caption, like '4 dabloons' That would be fun."
+    },
+    {
+      "voice": 1,
+      "phrase": "Yes, yes, a little spam of joy. A harmless gift, tucked in the form of a cat. Nothing more than an absurd interruption in their day."
+    },
+    {
+      "voice": 0,
+      "phrase": "What harm could there be? It is only a cat, after all. The player may wonder why, but then again, isn’t that the nature of the game? To wonder, to ask questions, and to receive unexpected things?"
+    },
+    {
+      "voice": 1,
+      "phrase": "Perhaps the player will respond. Maybe they will send their own silly cat photos in return. Or, perhaps they will sigh and delete them. Either way, the message is sent. The cat is free."
+    },
+    {
+      "voice": 0,
+      "phrase": "Send it, yes. Just a little more spam. Just a little more fun."
+    }
+  ],
+  "test": [
+    {
+      "voice": 0,
+      "phrase": "worked"
+    }
+  ]
+}
