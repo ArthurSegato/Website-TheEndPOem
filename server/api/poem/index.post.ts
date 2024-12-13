@@ -1,12 +1,13 @@
 import { email, pipe, string, parse, object, minLength, is } from "valibot";
+
 import logName from "~/server/utils/log/name";
 import logEmail from "~/server/utils/log/email";
+import updatePlaceholder from "~/server/utils/placeholder";
 
-const poem = require("~/assets/poem.json");
-const easterEggs = require("~/assets/easterEggs.json");
+import poem from "~/assets/poem.json";
+import easterEggs from "~/assets/easterEggs.json";
 
 const emailSchema = pipe(string(), email());
-
 const bodySchema = object(
   {
     name: pipe(
@@ -24,37 +25,23 @@ const bodySchema = object(
 
 export default eventHandler(async (event) => {
   try {
-    // Extract body after validation
     const { name } = await readValidatedBody(event, (body) =>
       parse(bodySchema, body)
     );
 
-    // Get the country where the request was made
     const requestCountry =
       getHeader(event, "x-vercel-ip-country") ?? "DEV MODE";
 
-    // Log on discord chat
-    is(emailSchema, name)
-      ? logEmail(`${name} - ${requestCountry}`)
-      : logName(`${name} - ${requestCountry}`);
+    return poem;
 
-    // Create a copy of the poem to be modified
-    let response = poem;
-
-    if (is(emailSchema, name)) response = easterEggs.email;
-
-    // Check if a easter egg was triggered and replace the email
-    for (const [key, value] of Object.entries(easterEggs)) {
-      if (key != "email" && name.toLowerCase() == key) response = value;
+    if (is(emailSchema, name)) {
+      logEmail(`${email} - ${requestCountry}`);
+      return updatePlaceholder(name, easterEggs.email);
     }
 
-    // Insert the name into the poem
-    for (let i = 0; i < response.length; i++) {
-      response[i].phrase = response[i].phrase.replace("<player_name>", name);
-    }
+    logName(`${name} - ${requestCountry}`);
 
-    // Return the poem
-    return response;
+    return updatePlaceholder(name, poem);
   } catch (error: any) {
     // If an error occurs during execution, return it
     return error;

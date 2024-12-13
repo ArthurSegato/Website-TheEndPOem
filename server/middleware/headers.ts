@@ -1,12 +1,5 @@
-/**
- ************************************************
- *  VALIDATE REQUEST HEADERS                    *
- ************************************************
- *  The API only handle data in JSON,           *
- *  all requests must have content-type header  *
- *  and must be set to "application/json"       *
- * **********************************************
- */
+// The API only handle data in JSON,
+// so all requests must have content-type header set to "application/json"
 
 export default eventHandler((event) => {
   if (

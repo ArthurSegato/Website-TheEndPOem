@@ -1,11 +1,4 @@
-/**
- **********************************************
- *  LOG EMAIL UTIL                            *
- **********************************************
- *  Send the email to another discord chat,   *
- *  through discord webhooks                  *
- * ********************************************
- */
+// Send the email to a discord chat through discord webhooks
 export default function (name: String) {
   return fetch(useRuntimeConfig().webhooks.discordEmail, {
     method: "POST",

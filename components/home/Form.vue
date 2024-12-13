@@ -1,9 +1,21 @@
 <script lang="ts" setup>
 const name = useName();
+
+const poem = usePoem();
+
+const handleSubmit = async () => {
+    const res = await $fetch("/api/poem", {
+        method: "POST",
+        body: { name: name.value },
+    });
+
+    poem.value = res;
+
+}
 </script>
 
 <template>
-    <form autocomplete="off" @submit.prevent=""
+    <form autocomplete="off" @submit.prevent="handleSubmit"
         class="flex items-center bg-[#DADADA]/50 rounded-3xl w-1/2 shadow-sm border-2 focus-within:border-current transition-all duration-200 ease-in-out">
         <input type="text" name="name" id="name" v-model="name" placeholder="Name"
             class="bg-transparent rounded-l-3xl pl-3 py-2 w-full h-full text-sm outline-none placeholder:italic">
