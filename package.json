@@ -3,14 +3,22 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "nuxt": "^3.14.1592",
+    "tailwindcss": "^4.0.0-beta.8",
     "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.7.4",
+    "eslint": "^9.17.0",
+    "typescript": "^5.7.2"
   }
 }
